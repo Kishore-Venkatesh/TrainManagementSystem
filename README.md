@@ -15,18 +15,18 @@
 Follow these steps to build the project on your local machine:
 
 ### Step 1: Clone the repository
-git clone https://github.com/Kishore-Venkatesh/TrainManagementSystem.git
+```git clone https://github.com/Kishore-Venkatesh/TrainManagementSystem.git```
 
 ### Step 2: Navigate to the project directory
-cd TrainManagementSystem
+```cd TrainManagementSystem```
 
 ### Step 3: Create a build directory and move into it
-mkdir BUILD
-cd BUILD
+```mkdir BUILD```
+```cd BUILD```
 
 ### Step 4: Run CMake and build the project
-cmake ..
-make
+```cmake ..```
+```make```
 
 ### Step 5: Run the executable
-./TrainManagementSystem
+```./TrainManagementSystem```
