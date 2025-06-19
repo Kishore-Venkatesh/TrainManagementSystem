@@ -1,0 +1,124 @@
+/**
+ * @file TrainDataParser.cpp
+ * @author Kishore-Venkatesh
+ * @brief  Source file for TrainDataParser
+ * @version 0.1
+ * @date 2025-06-18
+ * 
+ */
+
+#include <iostream>
+#include <utility>
+#include "tinyxml2.h"
+#include "TrainDataParser.hpp"
+
+namespace trainmanager
+{
+
+    /**
+     * @brief Defines the constructor for the TrainDataParser object
+     * 
+     */
+    TrainDataParser::TrainDataParser() : trainxmlfile("data/train.xml")
+    {
+        document = new tinyxml2::XMLDocument();
+    }
+
+    /**
+     * @brief Defines the constructor for the TrainDataParser object with train xml file as input
+     * 
+     */
+    TrainDataParser::TrainDataParser(const std::string &trainfile) : trainxmlfile(trainfile)
+    {
+        document = new tinyxml2::XMLDocument();
+    }
+
+    /**
+     * @brief Defines the destructor for the TrainDataParser object
+     *
+     */
+    TrainDataParser::~TrainDataParser()
+    {
+        delete document;
+    }
+
+    /**
+     * @brief Defines the loadxmlfile functionality
+     * @returns true on success or false otherwise
+     *
+     */
+    bool TrainDataParser::loadTrainxmlFile()
+    {
+        tinyxml2::XMLError eResult = document->LoadFile(trainxmlfile.c_str());
+        if (eResult != tinyxml2::XML_SUCCESS)
+        {
+            std::cerr << "Unable to load the xml file :" << trainxmlfile << std::endl;
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * @brief Defines the storeTrainDetails functionality
+     * @returns true on success or false otherwise
+     *
+     */
+    bool TrainDataParser::storeTrainDetails()
+    {
+        tinyxml2::XMLElement *root = document->FirstChildElement("TrainDetails");
+        if (root == nullptr)
+        {
+            std::cerr << "Unable to find root element TrainDetails." << std::endl;
+            return false;
+        }
+        for (tinyxml2::XMLElement *trainElement = root->FirstChildElement("Train"); trainElement != nullptr; trainElement = trainElement->NextSiblingElement("Train"))
+        {
+            struct trainDetails traindata{};
+
+            tinyxml2::XMLElement *trainNumElem = trainElement->FirstChildElement("TrainNumber");
+            if (trainNumElem && trainNumElem->GetText())
+            {
+                traindata.trainNumber = trainNumElem->GetText();
+            }
+
+            tinyxml2::XMLElement *sourceElem = trainElement->FirstChildElement("Source");
+            if (sourceElem && sourceElem->GetText())
+            {
+                traindata.source = sourceElem->GetText();
+            }
+
+            tinyxml2::XMLElement *destElem = trainElement->FirstChildElement("Destination");
+            if (destElem && destElem->GetText())
+            {
+                traindata.destination = destElem->GetText();
+            }
+
+            trainsList[traindata.trainNumber] = traindata;
+        }
+        return true;
+    }
+
+    /**
+     * @brief Defines the printTrainList functionality
+     *
+     */
+    void TrainDataParser::printTrainList()
+    {
+        std::cout << std::endl;
+        std::cout << std::endl;
+        std::cout << "\tWelcome to Train Management System" << std::endl;
+        std::cout << std::endl;
+        std::cout << std::endl;
+        std::cout << "Train Number" << "\t" << "Source Station" << "\t  " << "Destination Station" << std::endl;
+        std::cout << std::endl;
+        for (std::pair<std::string, struct trainDetails> traindata : trainsList)
+        {
+            std::cout << traindata.second.trainNumber << "\t\t"
+                      << traindata.second.source << "\t  "
+                      << traindata.second.destination << std::endl;
+        }
+        std::cout << std::endl;
+        std::cout << std::endl;
+    }
+
+} // namespace trainmanager
