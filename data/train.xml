@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<TrainDetails>
+    <Train>
+        <TrainNumber>10001A</TrainNumber>
+        <Source>Bangalore</Source>
+        <Destination>Chennai</Destination>
+    </Train>
+    <Train>
+        <TrainNumber>10002B</TrainNumber>
+        <Source>Rajasthan</Source>
+        <Destination>Bangalore</Destination>
+    </Train>
+    <Train>
+        <TrainNumber>10003C</TrainNumber>
+        <Source>Bangalore</Source>
+        <Destination>Mumbai</Destination>
+    </Train>
+    <Train>
+        <TrainNumber>10004D</TrainNumber>
+        <Source>Bangalore</Source>
+        <Destination>Lucknow</Destination>
+    </Train>
+</TrainDetails>
