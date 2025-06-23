@@ -121,4 +121,118 @@ namespace trainmanager
         std::cout << std::endl;
     }
 
+    /**
+     * @brief Defines the extractDataByTrainNumber functionality
+     *
+     */
+    void TrainDataParser::extractDataByTrainNumber(const std::string &trainNum)
+    {
+        bool foundtrain{false};
+
+        std::cout << std::endl;
+        std::cout << std::endl;
+        std::cout << "\tWelcome to Train Management System" << std::endl;
+        std::cout << std::endl;
+        std::cout << std::endl;
+
+        for (std::pair<std::string, struct trainDetails> trainDataByNum : trainsList)
+        {
+            if (trainNum != trainDataByNum.first)
+            {
+                continue;
+            }
+            std::cout << "Train Number" << "\t" << "Source Station" << "\t  " << "Destination Station" << std::endl;
+            std::cout << std::endl;
+            std::cout << trainDataByNum.second.trainNumber << "\t\t"
+                      << trainDataByNum.second.source << "\t  "
+                      << trainDataByNum.second.destination << std::endl;
+            foundtrain = true;
+        }
+        if (!foundtrain)
+        {
+            std::cout << "No trains found in the list that matches the train number: " << trainNum << std::endl;
+        }
+        std::cout << std::endl;
+        std::cout << std::endl;
+    }
+
+    /**
+     * @brief Defines the extractDataBySourceStation functionality
+     *
+     */
+    void TrainDataParser::extractDataBySourceStation(const std::string &srcStation)
+    {
+        bool trainDataBySrcFound{false};
+        bool foundDataAddHeading{true};
+
+        std::cout << std::endl;
+        std::cout << std::endl;
+        std::cout << "\tWelcome to Train Management System" << std::endl;
+        std::cout << std::endl;
+        std::cout << std::endl;
+
+        for(std::pair<std::string, struct trainDetails> trainDataBySrc : trainsList)
+        {
+            if (srcStation != trainDataBySrc.second.source)
+            {
+                continue;
+            }
+            if (foundDataAddHeading)
+            {
+                std::cout << "Train Number" << "\t" << "Source Station" << "\t  " << "Destination Station" << std::endl;
+                std::cout << std::endl;
+                foundDataAddHeading = false;
+            } 
+            std::cout << trainDataBySrc.second.trainNumber << "\t\t"
+                      << trainDataBySrc.second.source << "\t  "
+                      << trainDataBySrc.second.destination << std::endl;
+            trainDataBySrcFound = true;
+        }
+        if (!trainDataBySrcFound)
+        {
+            std::cout << "No trains found in the list that matches with the source station: " << srcStation << std::endl;
+        }
+        std::cout << std::endl;
+        std::cout << std::endl;
+    }
+
+    /**
+     * @brief Defines the extractDataByDestinationStation functionality
+     *
+     */
+    void TrainDataParser::extractDataByDestinationStation(const std::string &destStation)
+    {
+        bool trainDataByDestFound{false};
+        bool foundDataAddHeading{true};
+
+        std::cout << std::endl;
+        std::cout << std::endl;
+        std::cout << "\tWelcome to Train Management System" << std::endl;
+        std::cout << std::endl;
+        std::cout << std::endl;
+        for (std::pair<std::string, struct trainDetails> trainDataByDest : trainsList)
+        {
+            if (destStation != trainDataByDest.second.destination)
+            {
+                continue;
+            }
+            if (foundDataAddHeading)
+            {
+                std::cout << "Train Number" << "\t" << "Source Station" << "\t  " << "Destination Station" << std::endl;
+                std::cout << std::endl;
+                foundDataAddHeading = false;
+            }
+            std::cout << trainDataByDest.second.trainNumber << "\t\t"
+                      << trainDataByDest.second.source << "\t  "
+                      << trainDataByDest.second.destination << std::endl;
+            trainDataByDestFound = true;
+        }
+        if (!trainDataByDestFound)
+        {
+            std::cout << "No trains found in the list that matches with the destination station: " << destStation << std::endl;
+        }
+        std::cout << std::endl;
+        std::cout << std::endl;
+    }
+
 } // namespace trainmanager

@@ -90,7 +90,7 @@ class TrainDataParser
          * 
          * If successful returns true otherwise false
          * 
-         * @returns bool
+         * @returns true on success, false otherwise
          */
         bool storeTrainDetails();
 
@@ -103,7 +103,43 @@ class TrainDataParser
          */
         void printTrainList();
 
-    private:
+        /**
+         * @brief Extracts the data based on the train number
+         *
+         * This function extracts data from the trainsList container
+         * based on the train number given by the user and prints the
+         * data on console
+         *
+         * @param[in] trainNum gets the input number from user
+         * 
+         */
+        void extractDataByTrainNumber(const std::string &trainNum);
+
+        /**
+         * @brief Extracts the data based on the source station
+         *
+         * This function extracts data from the trainsList container
+         * based on the source station given by the user and prints the
+         * data on console
+         *
+         * @param[in] srcStation gets the input number from user
+         *
+         */
+        void extractDataBySourceStation(const std::string &srcStation);
+
+        /**
+         * @brief Extracts the data based on the destination station
+         *
+         * This function extracts data from the trainsList container
+         * based on the destination station given by the user and prints 
+         * the data on console
+         *
+         * @param[in] destStation gets the input number from user
+         *
+         */
+        void extractDataByDestinationStation(const std::string &destStation);
+
+    private : 
         tinyxml2::XMLDocument *document;
         std::string trainxmlfile;
         std::map<std::string, struct trainDetails> trainsList;
