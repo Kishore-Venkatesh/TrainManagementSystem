@@ -21,4 +21,114 @@
         <Source>Bangalore</Source>
         <Destination>Lucknow</Destination>
     </Train>
+    <Train>
+        <TrainNumber>10005E</TrainNumber>
+        <Source>Jharkhand</Source>
+        <Destination>Pune</Destination>
+    </Train>
+    <Train>
+        <TrainNumber>10006F</TrainNumber>
+        <Source>New Delhi</Source>
+        <Destination>Bangalore</Destination>
+    </Train>
+    <Train>
+        <TrainNumber>10007G</TrainNumber>
+        <Source>Bangalore</Source>
+        <Destination>New Delhi</Destination>
+    </Train>
+    <Train>
+        <TrainNumber>10008H</TrainNumber>
+        <Source>Telangana</Source>
+        <Destination>Chennai</Destination>
+    </Train>
+    <Train>
+        <TrainNumber>10009I</TrainNumber>
+        <Source>Bangalore</Source>
+        <Destination>Srinagar</Destination>
+    </Train>
+    <Train>
+        <TrainNumber>10010J</TrainNumber>
+        <Source>Rajasthan</Source>
+        <Destination>Haryana</Destination>
+    </Train>
+    <Train>
+        <TrainNumber>10011K</TrainNumber>
+        <Source>New Delhi</Source>
+        <Destination>Chennai</Destination>
+    </Train>
+    <Train>
+        <TrainNumber>10012L</TrainNumber>
+        <Source>Jharkhand</Source>
+        <Destination>Mumbai</Destination>
+    </Train>
+    <Train>
+        <TrainNumber>10013M</TrainNumber>
+        <Source>New Delhi</Source>
+        <Destination>Vizag</Destination>
+    </Train>
+    <Train>
+        <TrainNumber>10014N</TrainNumber>
+        <Source>Ahmedabad</Source>
+        <Destination>Vizag</Destination>
+    </Train>
+    <Train>
+        <TrainNumber>10015O</TrainNumber>
+        <Source>Bangalore</Source>
+        <Destination>New Delhi</Destination>
+    </Train>
+    <Train>
+        <TrainNumber>10016P</TrainNumber>
+        <Source>Hyderabad</Source>
+        <Destination>Jaipur</Destination>
+    </Train>
+    <Train>
+        <TrainNumber>10017Q</TrainNumber>
+        <Source>Bangalore</Source>
+        <Destination>Haryana</Destination>
+    </Train>
+    <Train>
+        <TrainNumber>10018R</TrainNumber>
+        <Source>Rajasthan</Source>
+        <Destination>Agra</Destination>
+    </Train>
+    <Train>
+        <TrainNumber>10019S</TrainNumber>
+        <Source>Puducherry</Source>
+        <Destination>Goa</Destination>
+    </Train>
+    <Train>
+        <TrainNumber>10020T</TrainNumber>
+        <Source>Bangalore</Source>
+        <Destination>Mysore</Destination>
+    </Train>
+    <Train>
+        <TrainNumber>10021U</TrainNumber>
+        <Source>Mangalore</Source>
+        <Destination>Chennai</Destination>
+    </Train>
+    <Train>
+        <TrainNumber>10022V</TrainNumber>
+        <Source>Bangalore</Source>
+        <Destination>Mangalore</Destination>
+    </Train>
+    <Train>
+        <TrainNumber>10023W</TrainNumber>
+        <Source>Bangalore</Source>
+        <Destination>Mysore</Destination>
+    </Train>
+    <Train>
+        <TrainNumber>10024X</TrainNumber>
+        <Source>Mangalore</Source>
+        <Destination>Punjab</Destination>
+    </Train>
+    <Train>
+        <TrainNumber>10025Y</TrainNumber>
+        <Source>Banglore</Source>
+        <Destination>Cochin</Destination>
+    </Train>
+    <Train>
+        <TrainNumber>10026Z</TrainNumber>
+        <Source>New Delhi</Source>
+        <Destination>Mysore</Destination>
+    </Train>
 </TrainDetails>
